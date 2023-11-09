@@ -1,9 +1,11 @@
 package com.digitalent.demo.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import com.digitalent.demo.model.Users;
 
-public interface UserRepository extends JpaRepository<Users,Integer> {
+@Repository
+public interface UserRepository extends JpaRepository<Users,Long> {
 
 }

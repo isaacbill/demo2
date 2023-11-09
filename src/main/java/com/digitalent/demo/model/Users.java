@@ -1,36 +1,40 @@
 package com.digitalent.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+
 
 @Entity
-
+@Table(name="user")
 public class Users {
 	@Id
-	private int id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	
+	@Column(name = "firstname")
 	private String firstname;
+	
+	@Column(name = "lastname")
 	private String lastname;
-	private String age;
+	
+	@Column(name = "age")
+	private int age;
+	
+	@Column(name = "town")
 	private String town;
+	
+	@Column(name = "gender")
 	private String gender;
 	
-	public Users() {
-	
-	}
-	
-	public Users(int id, String firstname, String lastname, String age, String town, String gender) {
-		super();
-		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.age = age;
-		this.town = town;
-		this.gender = gender;
-	}
-	public int getId() {
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	public String getFirstname() {
@@ -45,10 +49,10 @@ public class Users {
 	public void setLastname(String lastname) {
 		this.lastname = lastname;
 	}
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	public String getTown() {
@@ -63,7 +67,7 @@ public class Users {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	
-	
 
+	
+	
 }
